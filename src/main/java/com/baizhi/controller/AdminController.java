@@ -18,7 +18,7 @@ import java.awt.image.BufferedImage;
 public class AdminController {
     @Autowired
     private AdminService adminService;
-
+//qqqqq
     @RequestMapping("login")
     public String login(String enCode,String name, String password, HttpSession session, Model model)throws Exception{
         try {
