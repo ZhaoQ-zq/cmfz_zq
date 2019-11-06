@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.baizhi.dao.UserDAO">
+    <select id="UserCount" resultType="int">
+        select count(id) from user where datediff(now(),create_date) &lt; #{day} and sex=#{sex}
+    </select>
+
+    <select id="queryCountByPro" resultType="User">
+        select province,count(id) number from user where sex=#{sex} group by province
+    </select>
+
+    <select id="selectUsers" resultType="User">
+        select * from user
+    </select>
+
+</mapper>
